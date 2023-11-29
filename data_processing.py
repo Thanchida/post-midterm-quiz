@@ -103,6 +103,7 @@ class Table:
     def update_row(self, primary_attribute, primary_attribute_value, update_attribute, update_value):
         primary_attribute = update_attribute
         primary_attribute_value = update_value
+
     def __str__(self):
         return self.table_name + ':' + str(self.table)
 
@@ -115,11 +116,11 @@ dict['Profitability'] = '9.765'
 dict['Rotten Tomatoes %'] = '92'
 dict['Worldwide Gross'] = '195.3'
 dict['Year'] = '2017'
-movie = Table('', [])
+movie = Table('movie', [])
 my_table = Table('Year of the film', [])
-# movie.insert_row(dict)
-# movie.update_row('Film', 'A Serious Man', 'Year', '2022')
-# print(movie.__str__())
+movie.insert_row(dict)
+movie.update_row('Film', 'A Serious Man', 'Year', '2022')
+print(movie.__str__())
 my_table.update_row('Film', 'A Serious Man', 'Year', '2022')
 my_table.__str__()
 print(my_table)
