@@ -97,6 +97,29 @@ class Table:
             pivot_table.append([item, aggregate_val_list])
         return pivot_table
 
+    def insert_row(self, dict):
+        self.table.append(dict)
+
+    def update_row(self, primary_attribute, primary_attribute_value, update_attribute, update_value):
+        primary_attribute = update_attribute
+        primary_attribute_value = update_value
     def __str__(self):
         return self.table_name + ':' + str(self.table)
 
+dict = {}
+dict['Film'] = 'The Shape of Water'
+dict['Genre'] = 'Fantasy'
+dict['Lead Studio'] = 'Fox'
+dict['Audience score %'] = '72'
+dict['Profitability'] = '9.765'
+dict['Rotten Tomatoes %'] = '92'
+dict['Worldwide Gross'] = '195.3'
+dict['Year'] = '2017'
+movie = Table('', [])
+my_table = Table('Year of the film', [])
+# movie.insert_row(dict)
+# movie.update_row('Film', 'A Serious Man', 'Year', '2022')
+# print(movie.__str__())
+my_table.update_row('Film', 'A Serious Man', 'Year', '2022')
+my_table.__str__()
+print(my_table)
